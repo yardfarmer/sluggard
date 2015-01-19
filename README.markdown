@@ -1,1 +1,1 @@
-practice of node-webkit
+sluggard 自动化项目发布管理工具
