@@ -1,0 +1,82 @@
+#login-form {
+	margin-top: 150px;
+}
+
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+#login {
+	margin-top: 20px;
+}
+
+#search-form {
+	text-align: right;
+	margin-top: 5px;
+}
+
+#send-form {
+	margin: 10px 0 15px 0;
+	text-align: right;
+}
+
+#search-text {
+	display: inline !important;
+	width: auto !important;
+}
+
+#send-text {
+	display: inline !important;
+}
+
+#send-text {
+	width: 100%;
+	height: 85px;
+}
+
+#content {
+	width: 90%;
+	margin: auto;
+}
+
+#timeline-container {
+  padding-top: 10px;
+}
+
+.timeline {
+	border-bottom: 1px solid #e1e8ed;
+	margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.avatar {
+	float: left;
+	margin-right: 10px;
+	width: 48px;
+	height: 48px;
+}
+
+.timeline-header {
+	position: relative;
+}
+
+.message-by {
+	color: gray;
+}
+
+.message-at {
+	position: absolute;
+	right: 0px;
+	color: gray;
+}
+
+.message-body {
+	font-size: 1.1em;
+	padding-left: 58px;
+}
+
+.cf {
+	clear: both;
+}

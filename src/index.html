@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="sluggard">
+    <head>
+        <meta charset="UTF-8">
+        <title>atmosphere</title>
+        <link rel="stylesheet" href="../spm_modules/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/css/index.css">
+    </head>
+    <body>
+        <section id="entrance">
+            <div id="login-form" class="container" ng-controller="LoginController">
+                <form class="form-signin" role="form" ng-submit="login()">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <input type="text" ng-model="id" id="login-id" class="form-control" placeholder="ID" required autofocus>
+                    <input type="password" ng-model="password" id="login-password" class="form-control" placeholder="Password" required>
+                    <button id="login" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="content" style="display: none;">
+            <div ng-controller="SearchController">
+                <form id="search-form" ng-submit="search()">
+                    <input type="text" name="search" id="search-text" ng-model="keyword" class="form-control" placeholder="Search keyword">
+                </form>
+            </div>
+
+            <div ng-controller="SendController">
+                <form id="send-form" ng-submit="send()">
+                    <textarea id="send-text" ng-model="message" class="form-control" rows="1" cols="40" placeholder="Say"></textarea>
+                    <button id="send" class="btn btn-info">投稿</button>
+                </form>
+            </div>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#global-timeline" data-toggle="tab">Global</a></li>
+                <li><a href="#talk-timeline" data-toggle="tab">Talk</a></li>
+                <li><a href="#private-timeline" data-toggle="tab">Private</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="timeline-container" ng-controller="TimelineController">
+                    <div class="timeline " ng-repeat="message in messages">
+                        <img class="avatar" src="{{ avatarUrl(message) }}">
+                        <div class="timeline-header">
+                            <span class="message-by">{{ message.created_by }}</span>
+                            <small class="message-at">{{ message.created_at }}</small>
+                        </div>
+                        <p class="message-body">{{ message.message }}</p>
+                        <div class="cf"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <script type="text/javascript" src="vendor/js/sockjs&#45;0.3.4.js"></script> -->
+        <!-- <script type="text/javascript" src="vendor/js/angular.min.js"></script> -->
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

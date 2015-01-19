@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sluggard">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
+
+	<title>懒汉</title>
+	<!-- Bootstrap core CSS -->
+	<link href="spm_modules/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+			        aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Sluggard</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">
+					<spn class="glyphicon glyphicon-cog"></spn>
+					设置</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row">
+
+		<div class="col-sm-3 col-md-2 sidebar">
+			<ul class="nav nav-sidebar">
+				<li class="active"><a href="#version" data-toggle="tab">版本控制 <span class="sr-only">(current)</span></a>
+				</li>
+				<li><a href="#open_off" data-toggle="tab">开闭服务</a></li>
+				<li><a href="#auto_deploy" data-toggle="tab">自动部署</a></li>
+				<li><a href="#log_view" data-toggle="tab">日志查看</a></li>
+			</ul>
+		</div>
+
+
+		<!--<ul id="tabId" class="nav nav-tabs">-->
+		<!--<li class="active"><a href="#home" data-toggle="tab">首页</a></li>-->
+		<!--<li><a href="#profile" data-toggle="tab">介绍</a></li>-->
+		<!--<li><a href="#messages" data-toggle="tab">消息</a></li>-->
+		<!--<li><a href="#settings" data-toggle="tab">设置</a></li>-->
+		<!--</ul>-->
+
+
+		<div class="tab-content">
+
+			<div id="version" class="active col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main tab-pane"
+			     ng-controller="versionController"
+			     ng-include="'./tmpl/versionControl.html'">
+			</div>
+			<div id="open_off" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main tab-pane"
+			     ng-include="'./tmpl/open_off.html'">
+			</div>
+			<div id="auto_deploy" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main tab-pane"
+			     ng-include="'./tmpl/auto_deploy.html'">
+
+			</div>
+			<div id="log_view" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main tab-pane"
+			     ng-include="'./tmpl/log_view.html'">
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="spm_modules/jquery/1.10.1/jquery.min.js"></script>
+<script src="spm_modules/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="spm_modules/angular/1.3.9/angular.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
